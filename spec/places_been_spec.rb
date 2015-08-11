@@ -5,7 +5,7 @@ describe(Places) do
   before() do
     Places.clear()
   end
-  
+
   describe("#location") do
     it("let you give a location") do
       new_place = Places.new("Tennesse")
@@ -30,6 +30,15 @@ describe(Places) do
   describe('.clear') do
     it('clears the array containing all locations') do
       Places.clear()
+      expect(Places.all()).to(eq([]))
+    end
+  end
+
+  describe('#remove') do
+    it('removes a certain') do
+      new_place = Places.new("Canada")
+      new_place.save()
+      new_place.remove()
       expect(Places.all()).to(eq([]))
     end
   end

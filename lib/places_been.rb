@@ -22,4 +22,7 @@ class Places
     @@all = []
   end
 
+  define_method(:remove) do
+    @@all.delete(self)
+  end
 end
