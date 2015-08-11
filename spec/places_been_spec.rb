@@ -34,11 +34,19 @@ describe(Places) do
     end
   end
 
-  describe('#remove') do
-    it('removes a certain') do
-      new_place = Places.new("Canada")
+  describe('#id') do
+    it('returns the id of a place') do
+      new_place = Places.new("London")
       new_place.save()
-      new_place.remove()
+      expect(new_place.id()).to(eq(1))
+    end
+  end
+
+  describe('.find_delete') do
+    it('finds the specified place by its id number then deletes') do
+      new_place = Places.new("London")
+      new_place.save()
+      Places.find_delete(1)
       expect(Places.all()).to(eq([]))
     end
   end

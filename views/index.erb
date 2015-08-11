@@ -1,0 +1,27 @@
+<h1> Where have you been? </h1>
+
+<ol>
+  <% @places.each() do |place| %>
+  <li><%= place.location() %></li>
+  <% end %>
+</ol>
+
+<p>Add a new place you've been!</p>
+
+<form action="/added_places" method="post">
+  <div class ="form-group">
+    <label for="location">Enter the place</label>
+    <input id="location" name="location" type="text">
+
+    <button type="submit">Add it!</button>
+  </div>
+</form>
+
+  <form action="/remove_places" method="post">
+    <div class ="form-group">
+      <label for="remove_loc">Remove somewhere you haven't really been</label>
+      <input id="remove_loc" name="remove_loc" type="text">
+
+      <button type="submit">Get it out!</button>
+    </div>
+  </form>
