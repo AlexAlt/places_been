@@ -12,5 +12,6 @@ describe(Places) do
   describe('.all') do
     it('creates empty array to store locations') do
       expect(Places.all()).to(eq([]))
+    end
   end
 end
