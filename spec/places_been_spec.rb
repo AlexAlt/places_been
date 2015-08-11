@@ -8,4 +8,9 @@ describe(Places) do
       expect(new_place.location()).to(eq("Tennesse"))
     end
   end
+
+  describe('.all') do
+    it('creates empty array to store locations') do
+      expect(Places.all()).to(eq([]))
+  end
 end
